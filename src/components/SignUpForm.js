@@ -77,11 +77,7 @@ class SignUpForm extends Component {
     }
 
     if (typeof fields["password"] !== "undefined") {
-      if (
-        !fields["password"].match(
-          /^[a-zA-Z0-9_\]\[?\/<~#`!@$%^&*()+=}|:\";\',>{ -]{4,20}$/
-        )
-      ) {
+      if (!fields["password"].match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)) {
         formIsValid = false;
         errors["password"] = "*Please enter secure and strong password.";
       }
@@ -136,7 +132,7 @@ class SignUpForm extends Component {
               name="password"
               value={this.state.fields.password || ""}
               onChange={this.handleChange}
-              placeholder="Must be mixed characters"
+              placeholder="Must contain atleast 8 characters"
             />
             <div className="errorMsg">{this.state.errors.password}</div>
             <input type="submit" className="button" value="Register" />

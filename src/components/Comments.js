@@ -16,11 +16,11 @@ class Comment extends Component {
   };
   onSubmit = event => {
     event.preventDefault();
-
     this.setState({
-      term: "",
-      items: [...this.state.items, this.state.term]
+      items: [...this.state.items, this.state.term],
+      term: " "
     });
+    event.target.reset();
   };
 
   render() {
@@ -32,7 +32,9 @@ class Comment extends Component {
             onChange={this.onChange}
             name="comment"
           />
-          <button className="button">Submit Comment</button>
+          <button className="button" disabled={!this.state.term}>
+            Submit Comment
+          </button>
         </form>
         <DisplayComments items={this.state.items} />
       </div>

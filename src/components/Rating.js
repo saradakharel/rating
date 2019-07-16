@@ -1,40 +1,49 @@
-import React, { Component } from "react";
-import Rater from "react-rater";
-import SignUpForm from "./SignUpForm";
-import "react-rater/lib/react-rater.css";
+import React from "react";
 
-class Rating extends Component {
+class Rating extends React.Component {
   state = {
-    showForm: false
+    rating: this.props.rating || 2.5,
+    temp_rating: null
   };
-
-  handleShowForm = e => {
-    e.preventDefault();
+  rate = rating => {
     this.setState({
-      showForm: true
+      rating: rating,
+      temp_rating: rating
     });
   };
-  handleHideForm = e => {
-    e.preventDefault();
+  star_over = rating => {
     this.setState({
-      showForm: false
+      rating: this.state.rating,
+      temp_rating: this.state.temp_rating
     });
+  };
+  star_out = () => {
+    this.setState({ rating: this.state.rating });
   };
   render() {
-    if (!this.state.showForm) {
-      return (
-        <div>
-          <h3>Rating</h3>
-          <Rater total={5} rating={2.5} onClick={this.handleShowForm} />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <SignUpForm handleHideForm={this.handleHideForm} />
-        </div>
+    console.log(this.props.rating);
+    var stars = [];
+
+    for (var i = 1; i <= 5; i++) {
+      var klass = "star-rating__star";
+
+      if (this.state.rating >= i && this.state.rating != null) {
+        klass += " is-selected";
+      }
+
+      stars.push(
+        <label
+          className={klass}
+          onClick={this.rate.bind(this, i)}
+          onMouseOver={this.star_over.bind(this, i)}
+          onMouseOut={this.star_out}
+        >
+          ★
+        </label>
       );
     }
+
+    return <div className="star-rating">{stars}</div>;
   }
 }
 export default Rating;
