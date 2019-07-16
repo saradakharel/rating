@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ProfilePic from "./ProfilePic";
 import Comment from "./Comments";
 import Rating from "./Rating";
-import SignUpForm from "./SignUpForm";
+
 class Main extends Component {
   render() {
     return (
@@ -11,7 +11,6 @@ class Main extends Component {
         <ProfilePic />
         <Rating />
         <Comment />
-        <SignUpForm />
       </div>
     );
   }
