@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-class RegisterForm extends Component {
+
+class SignUpForm extends Component {
   state = {
     fields: {},
     errors: {}
@@ -108,6 +109,7 @@ class RegisterForm extends Component {
               name="username"
               value={this.state.fields.username || ""}
               onChange={this.handleChange}
+              placeholder="username"
             />
             <div className="errorMsg">{this.state.errors.username}</div>
             <label>Email ID:</label>
@@ -116,6 +118,7 @@ class RegisterForm extends Component {
               name="emailid"
               value={this.state.fields.emailid || ""}
               onChange={this.handleChange}
+              placeholder="johnDoe@gmail.com"
             />
             <div className="errorMsg">{this.state.errors.emailid}</div>
             <label>Mobile No:</label>
@@ -124,6 +127,7 @@ class RegisterForm extends Component {
               name="mobileno"
               value={this.state.fields.mobileno || ""}
               onChange={this.handleChange}
+              placeholder="+358456789098"
             />
             <div className="errorMsg">{this.state.errors.mobileno}</div>
             <label>Password</label>
@@ -132,6 +136,7 @@ class RegisterForm extends Component {
               name="password"
               value={this.state.fields.password || ""}
               onChange={this.handleChange}
+              placeholder="Must be mixed characters"
             />
             <div className="errorMsg">{this.state.errors.password}</div>
             <input type="submit" className="button" value="Register" />
@@ -142,4 +147,4 @@ class RegisterForm extends Component {
   }
 }
 
-export default RegisterForm;
+export default SignUpForm;
