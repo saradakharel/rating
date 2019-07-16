@@ -1,27 +1,24 @@
 /*App*/
 .App {
-  margin: 3%;
-  padding: 3%;
+  padding: 2%;
+  margin: 2%;
   font-family: "Roboto Condensed", sans-serif;
+  box-shadow: inset 0 0 10px #000000;
 }
 .heading {
   text-align: center;
   margin-bottom: 2%;
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .main-container {
-    display: grid;
-    grid-template-columns: 100%;
-  }
+  background-color: #00bfff;
+  color: white;
 }
 
 /*main container*/
 .main-container {
-  display: flex;
-  justify-content: space-around;
-  border: 2px solid red;
-  padding: 3%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, auto));
+}
+.main-container .components {
+  width: 100%;
 }
 /* profile -pic */
 .profileAvatar {
@@ -66,7 +63,7 @@ textarea {
 }
 .displayedComments li {
   padding-top: 2%;
-  margin-left: -5%;
+  margin-left: -3%;
 }
 
 /* signupform*/

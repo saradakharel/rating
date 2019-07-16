@@ -6,10 +6,10 @@ class Main extends Component {
   render() {
     return (
       <div className="main-container">
-        <div>
+        <div className="components">
           <ProfilePic />
         </div>
-        <div>
+        <div className="components">
           <Comment />
         </div>
       </div>
