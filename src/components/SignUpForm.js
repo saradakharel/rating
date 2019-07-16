@@ -79,7 +79,7 @@ class SignUpForm extends Component {
     if (typeof fields["password"] !== "undefined") {
       if (
         !fields["password"].match(
-          /^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/
+          /^[a-zA-Z0-9_\]\[?\/<~#`!@$%^&*()+=}|:\";\',>{ -]{4,20}$/
         )
       ) {
         formIsValid = false;
@@ -127,7 +127,7 @@ class SignUpForm extends Component {
               name="mobileno"
               value={this.state.fields.mobileno || ""}
               onChange={this.handleChange}
-              placeholder="+358456789098"
+              placeholder="0456789098"
             />
             <div className="errorMsg">{this.state.errors.mobileno}</div>
             <label>Password</label>
@@ -140,6 +140,12 @@ class SignUpForm extends Component {
             />
             <div className="errorMsg">{this.state.errors.password}</div>
             <input type="submit" className="button" value="Register" />
+            <input
+              type="button"
+              className="button"
+              value="Close"
+              onClick={this.props.handleHideForm}
+            />
           </form>
         </div>
       </div>

@@ -6,11 +6,16 @@ import Rating from "./Rating";
 class Main extends Component {
   render() {
     return (
-      <div>
-        Main
-        <ProfilePic />
-        <Rating />
-        <Comment />
+      <div className="main-container">
+        <div>
+          <ProfilePic />
+        </div>
+        <div>
+          <Rating />
+        </div>
+        <div>
+          <Comment />
+        </div>
       </div>
     );
   }

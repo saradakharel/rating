@@ -3,7 +3,13 @@ import DisplayComments from "./DisplayComments";
 class Comment extends Component {
   state = {
     term: "",
-    items: []
+    items: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Fusce elementum sem venenatis, congue risus at, aliquet velit.",
+      "Cras semper turpis vel augue pharetra, in vehicula augue luctus.",
+      "Aenean ut risus condimentum, accumsan felis id, lobortis eros.",
+      "Maecenas et sem ut mauris hendrerit commodo maximus aliquet tortor."
+    ]
   };
   onChange = event => {
     this.setState({ term: event.target.value });
@@ -20,7 +26,7 @@ class Comment extends Component {
       <div>
         <form className="commentForm" onSubmit={this.onSubmit}>
           <textarea value={this.state.term} onChange={this.onChange} />
-          <button>Submit Comment</button>
+          <button className="button">Submit Comment</button>
         </form>
         <DisplayComments items={this.state.items} />
       </div>

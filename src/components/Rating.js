@@ -14,7 +14,12 @@ class Rating extends Component {
       showForm: true
     });
   };
-
+  handleHideForm = e => {
+    e.preventDefault();
+    this.setState({
+      showForm: false
+    });
+  };
   render() {
     if (!this.state.showForm) {
       return (
@@ -25,7 +30,7 @@ class Rating extends Component {
     } else {
       return (
         <div>
-          <SignUpForm />
+          <SignUpForm handleHideForm={this.handleHideForm} />
         </div>
       );
     }
