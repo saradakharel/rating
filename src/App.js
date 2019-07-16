@@ -4,7 +4,7 @@ import Main from "./components/Main";
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <h1 className="heading">Streamer's Profile</h1>
       <Main />
     </div>
   );

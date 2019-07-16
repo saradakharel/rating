@@ -16,16 +16,22 @@ class Comment extends Component {
   };
   onSubmit = event => {
     event.preventDefault();
+
     this.setState({
       term: "",
       items: [...this.state.items, this.state.term]
     });
   };
+
   render() {
     return (
       <div>
         <form className="commentForm" onSubmit={this.onSubmit}>
-          <textarea value={this.state.term} onChange={this.onChange} />
+          <textarea
+            value={this.state.term.comment}
+            onChange={this.onChange}
+            name="comment"
+          />
           <button className="button">Submit Comment</button>
         </form>
         <DisplayComments items={this.state.items} />

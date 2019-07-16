@@ -1,7 +1,27 @@
+/*App*/
+.App {
+  margin: 3%;
+  padding: 3%;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.heading {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
+
 /*main container*/
 .main-container {
-  display: grid;
-  grid-template-columns: 20% 20% 50%;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid red;
+  padding: 3%;
 }
 /* profile -pic */
 .profileAvatar {
@@ -25,11 +45,16 @@
   width: 100%;
 }
 
+/*rating*/
+.rating {
+  margin-top: 2%;
+}
+
 /* comment*/
 textarea {
   width: 100%;
-  height: 150px;
-  padding: 12px 20px;
+  height: 25%;
+  padding: 2%;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -40,7 +65,8 @@ textarea {
   list-style-type: none;
 }
 .displayedComments li {
-  padding: 2%;
+  padding-top: 2%;
+  margin-left: -5%;
 }
 
 /* signupform*/
@@ -81,12 +107,12 @@ form input {
 
 .button {
   background-color: #00bfff;
-  border-color: #3ac162;
   font-weight: bold;
   padding: 12px 15px;
   color: #ffffff;
   border-radius: 10px;
   margin-top: 2%;
+  outline: 0 !important;
 }
 
 .errorMsg {

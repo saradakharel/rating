@@ -24,6 +24,7 @@ class Rating extends Component {
     if (!this.state.showForm) {
       return (
         <div>
+          <h3>Rating</h3>
           <Rater total={5} rating={2.5} onClick={this.handleShowForm} />
         </div>
       );

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ProfilePic from "./ProfilePic";
 import Comment from "./Comments";
-import Rating from "./Rating";
 
 class Main extends Component {
   render() {
@@ -9,9 +8,6 @@ class Main extends Component {
       <div className="main-container">
         <div>
           <ProfilePic />
-        </div>
-        <div>
-          <Rating />
         </div>
         <div>
           <Comment />
