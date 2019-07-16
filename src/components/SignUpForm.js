@@ -106,7 +106,7 @@ class RegisterForm extends Component {
             <input
               type="text"
               name="username"
-              value={this.state.fields.username}
+              value={this.state.fields.username || ""}
               onChange={this.handleChange}
             />
             <div className="errorMsg">{this.state.errors.username}</div>
@@ -114,7 +114,7 @@ class RegisterForm extends Component {
             <input
               type="text"
               name="emailid"
-              value={this.state.fields.emailid}
+              value={this.state.fields.emailid || ""}
               onChange={this.handleChange}
             />
             <div className="errorMsg">{this.state.errors.emailid}</div>
@@ -122,7 +122,7 @@ class RegisterForm extends Component {
             <input
               type="text"
               name="mobileno"
-              value={this.state.fields.mobileno}
+              value={this.state.fields.mobileno || ""}
               onChange={this.handleChange}
             />
             <div className="errorMsg">{this.state.errors.mobileno}</div>
@@ -130,7 +130,7 @@ class RegisterForm extends Component {
             <input
               type="password"
               name="password"
-              value={this.state.fields.password}
+              value={this.state.fields.password || ""}
               onChange={this.handleChange}
             />
             <div className="errorMsg">{this.state.errors.password}</div>
